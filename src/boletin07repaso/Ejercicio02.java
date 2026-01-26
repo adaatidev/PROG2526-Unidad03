@@ -1,6 +1,5 @@
 package boletin07repaso;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Ejercicio02 {
@@ -22,7 +21,8 @@ public class Ejercicio02 {
 		System.out.println("NOTA MÁXIMA: " + notaMaxima(notas));
 		System.out.println("NÚMERO DE APROBADOS: " + contarAprobados(notas));
 		System.out.println();
-		System.out.println("NOTAS MODIFICADAS CON INCREMENTOS: " + Arrays.toString(notas));
+		System.out.println("NOTAS MODIFICADAS CON INCREMENTOS: ");
+		subirNotas(notas, 0);
 
 	}
 
