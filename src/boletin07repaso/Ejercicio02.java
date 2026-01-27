@@ -14,6 +14,7 @@ public class Ejercicio02 {
 
 		for (int i = 0; i < notas.length; i++) {
 			notas[i] = rnd.nextDouble(0, 10);
+			notas[i] = Math.round((notas[i] * 100.0) / 100.0);
 			System.out.println(notas[i] + "\t");
 		}
 
@@ -28,7 +29,7 @@ public class Ejercicio02 {
 
 	public static double calcularMedia(double[] notas) {
 
-		int media;
+		double media;
 
 		int sumaTotal = 0;
 
@@ -37,6 +38,8 @@ public class Ejercicio02 {
 		}
 
 		media = sumaTotal / notas.length;
+
+		media = Math.round((media * 100.0) / 100.0);
 
 		return media;
 
