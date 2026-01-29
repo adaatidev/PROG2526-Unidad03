@@ -16,42 +16,49 @@ public class EjercicioBi03 {
 		 * -----------------------------------------------------------------------------
 		 */
 
+		// Creación del random
 		Random rnd = new Random();
 
+		// Creación del array
 		int[][] matriz = new int[5][5];
 
+		// Se rellena e imprime el arrat
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[i].length; j++) {
-				matriz[i][j] = rnd.nextInt(1, 2);
+				matriz[i][j] = rnd.nextInt(1, 4);
 				System.out.print(matriz[i][j] + "\t");
 			}
 			System.out.println();
 		}
 
-		System.out.println(matrizSimetrica(matriz));
+		// Se llama a la función
+		System.out.println("¿La matriz es simétrica? " + matrizSimetrica(matriz));
 
 	}
 
+	/**
+	 * 
+	 * La función comprueba las posiciones de la matriz y devuelve si es simétrica o
+	 * no mediante un booleano
+	 * 
+	 * @param matrizNoSimetrica
+	 * @return
+	 */
+
 	public static boolean matrizSimetrica(int[][] matrizNoSimetrica) {
 
-		boolean simetrica = false;
-
-		int contador = 0;
+		boolean simetrica = true;
 
 		for (int i = 0; i < matrizNoSimetrica.length; i++) {
+
 			for (int j = 0; j < matrizNoSimetrica[i].length; j++) {
-				if (matrizNoSimetrica[i][j] == matrizNoSimetrica[j][i]) {
-					simetrica = true;
-					contador++;
+
+				if (matrizNoSimetrica[i][j] != matrizNoSimetrica[j][i]) {
+
+					simetrica = false;
 				}
 			}
 		}
-		if (contador == 10) {
-			simetrica = true;
-		} else {
-			simetrica = false;
-		}
-
 		return simetrica;
 
 	}
